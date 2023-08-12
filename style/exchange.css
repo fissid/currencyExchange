@@ -38,7 +38,7 @@ header {
   width: 0%;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 450px) {
   .right,
   .card,
   .left {
@@ -64,5 +64,9 @@ header {
 
   header h1 {
     font-size: 1.4em !important;
+  }
+
+  .progress {
+    width: 90%;
   }
 }
