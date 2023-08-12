@@ -11,22 +11,23 @@
     <script defer src="./script/exchange.js"></script>
     <title>Document</title>
   </head>
-  <body>
+  <body class="bg-dark">
     <header>
       <h1 class="display-5 text-center p-3">Currency Convertor</h1>
     </header>
     <main>
-      <div class="d-flex flex-column justify-content-center align-items-center">
-        <div class="left d-flex flex-column justify-content-center align-items-center mx-3">
+      <div class="d-flex flex-column justify-content-center align-items-center mt-4">
+        <div class="left d-flex flex-column justify-content-center align-items-center mx-3 p-3">
           <form>
             <div class="input-group">
-              <input type="search" name="from" id="fromMenu" class="form-control form-control-lg dropdown-search" placeholder="From" data-bs-toggle="dropdown" aria-expanded="false" />
+              <input type="search" id="fromMenu" class="form-control form-control-lg dropdown-search text-uppercase" placeholder="From" data-bs-toggle="dropdown" aria-expanded="false" maxlength="3" />
               <div class="dropdown-menu fromMenuDiv w-50" aria-labelledby="fromMenu"></div>
+
               <span class="input-group-text">
                 <i class="fa-solid fa-arrows-rotate"></i>
               </span>
 
-              <input type="search" name="to" id="toMenu" class="form-control form-control-lg dropdown-search" placeholder="To" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+              <input type="search" id="toMenu" class="form-control form-control-lg dropdown-search text-uppercase" placeholder="To" data-bs-toggle="dropdown" aria-expanded="false" maxlength="3" />
               <div class="dropdown-menu w-50 toMenuDiv" aria-labelledby="toMenu"></div>
             </div>
             <input type="text" id="amount" class="form-control from-control-lg my-2" placeholder="Amount" />
@@ -37,32 +38,32 @@
           <div class="progress-bar"></div>
         </div>
         <div class="right py-3 mx-3">
-          <div class="card my-3 d-none">
+          <div class="card my-3 d-none m-3">
             <div class="card-header d-flex justify-content-between">
-              <span class="d-flex justify-content-between w-25">
-                <small class="card-from">EUR</small>
+              <span class="w-100 text-center">
+                <small class="card-from h5"></small>
               </span>
               <span>
                 <i class="fa-solid fa-money-bill-transfer"></i>
               </span>
-              <span class="d-flex justify-content-between w-25">
-                <small class="card-to">EUR</small>
+              <span class="w-100 text-center">
+                <small class="card-to h5"></small>
               </span>
             </div>
             <div class="card-body d-flex justify-content-between align-items-center">
               <div class="input-group">
-                <input type="text" disabled placeholder="12" class="form-control card-from-input" />
+                <input type="text" disabled class="form-control card-from-input text-center" />
                 <div class="input-group-append">
-                  <span class="input-group-text px-1 card-from">EUR</span>
+                  <span class="input-group-text px-1 text-center card-from"></span>
                 </div>
               </div>
               <span>
                 <i class="fa-solid fa-equals fa-lg px-2"></i>
               </span>
               <div class="input-group">
-                <input type="text" disabled placeholder="12" class="form-control card-to-input" />
+                <input type="text" disabled class="form-control card-to-input text-center" />
                 <div class="input-group-append">
-                  <span class="input-group-text px-1 card-to">EUR</span>
+                  <span class="input-group-text px-1 text-center card-to"></span>
                 </div>
               </div>
             </div>
