@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background: #333;
+  color: white;
+}
+
+.flag {
+  width: 25px;
+  height: 25px;
+}
+
+.fromMenuDiv,
+.toMenuDiv {
+  max-height: 50vh;
+  overflow: auto;
+  cursor: pointer;
+}
+
+.progress {
+  border-radius: 10px;
+  height: 10px;
+  width: 400px;
+}
+
+.progress-bar {
+  width: 0%;
+}
