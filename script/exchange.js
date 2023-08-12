@@ -33,15 +33,17 @@ const convertApp = async function () {
       // check insert value to be a number, if not return and don't read rest of code of funtion
       if (!Number.isFinite(Number(amount.value))) return;
       amountCurrency = amount.value;
+      document.querySelector(".progress").classList.remove("d-none");
+
       let i = 0;
       const interval = setInterval(() => {
         document.querySelector(".progress-bar").style.width = `${i++}%`;
-      }, 1000);
-      // for (let i = 0; i <= 100; i++) {}
+      }, 150);
+
       convert(fromCurrency, toCurrency, amountCurrency).then(() => {
-        clearInterval(interval);
         document.querySelector(".card").classList.remove("d-none");
         document.querySelector(".progress").classList.add("d-none");
+        clearInterval(interval);
       });
     });
   } catch (err) {
