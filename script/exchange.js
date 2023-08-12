@@ -13,19 +13,43 @@ const convertApp = async function () {
             <span class="dropdown-item d-flex justify-content-center">
                   <small>${each[0]}</small>
                 </span>`;
-      document.querySelector(".toMenuDiv").insertAdjacentHTML("afterbegin", currencyRow);
-      document.querySelector(".fromMenuDiv").insertAdjacentHTML("afterbegin", currencyRow);
+      document.querySelector(".toMenuDiv").insertAdjacentHTML("beforeend", currencyRow);
+      document.querySelector(".fromMenuDiv").insertAdjacentHTML("beforeend", currencyRow);
     });
 
     document.querySelectorAll(".fromMenuDiv .dropdown-item").forEach((each) => {
       each.addEventListener("click", function (e) {
-        document.querySelector("#fromMenu").placeholder = fromCurrency = this.querySelector("small").textContent;
+        // last change
+        document.querySelector("#fromMenu").value = fromCurrency = this.querySelector("small").textContent;
       });
     });
     document.querySelectorAll(".toMenuDiv .dropdown-item").forEach((each) => {
       each.addEventListener("click", function (e) {
-        document.querySelector("#toMenu").placeholder = toCurrency = this.querySelector("small").textContent;
+        document.querySelector("#toMenu").value = toCurrency = this.querySelector("small").textContent;
       });
+    });
+
+    const fromSearch = document.querySelector("#fromMenu");
+    const toSearch = document.querySelector("#toMenu");
+    const fromMenuDiv = document.querySelectorAll(".fromMenuDiv small");
+    const toMenuDiv = document.querySelectorAll(".toMenuDiv small");
+
+    const sortCurrencies = function (e, div) {
+      const letter = String(e.target.value).toUpperCase();
+
+      div.forEach((item) => {
+        if (item.textContent.includes(letter)) {
+          item.parentElement.classList.remove("d-none");
+        } else {
+          item.parentElement.classList.add("d-none");
+        }
+      });
+    };
+    fromSearch.addEventListener("input", function (e) {
+      sortCurrencies(e, fromMenuDiv);
+    });
+    toSearch.addEventListener("input", function (e) {
+      sortCurrencies(e, toMenuDiv);
     });
 
     document.querySelector(".convert").addEventListener("click", function (e) {
