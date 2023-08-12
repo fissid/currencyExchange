@@ -21,6 +21,13 @@ header {
   cursor: pointer;
 }
 
+#fromMenu {
+  border-radius: 10px 0 0 10px;
+}
+#toMenu {
+  border-radius: 0 10px 10px 0;
+}
+
 .progress {
   border-radius: 10px;
   height: 10px;
@@ -29,4 +36,33 @@ header {
 
 .progress-bar {
   width: 0%;
+}
+
+@media (max-width: 380px) {
+  .right,
+  .card,
+  .left {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+
+  .card-body {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .equal {
+    width: 100%;
+    text-align: center;
+  }
+
+  input {
+    font-size: 0.9em !important;
+  }
+
+  header h1 {
+    font-size: 1.4em !important;
+  }
 }
